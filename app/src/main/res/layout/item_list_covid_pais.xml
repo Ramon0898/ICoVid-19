@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:padding="16dp"
+    android:background="@color/colorPrimary"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgBanderPaises"
+            tools:src="@drawable/us"
+            android:layout_gravity="center_vertical"
+            android:layout_width="48dp"
+            android:layout_height="32dp"/>
+
+        <TextView
+            android:id="@+id/tvNombrePais"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/colorBlanco"
+            android:layout_height="wrap_content"
+            tools:text="Republica Dominicana"/>
+
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tvTotalcasos"
+            android:layout_width="wrap_content"
+            tools:text="824568"
+            android:textSize="20sp"
+            android:textColor="@color/totalmuertos"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

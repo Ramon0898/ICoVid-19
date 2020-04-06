@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:id="@+id/lupa"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:onClick="onClick"
+            android:background="@color/colorPrimary"
+            android:layout_toEndOf="@id/buscador"
+            android:src="@drawable/ic_lupa"/>
+
+        <EditText
+            android:layout_width="315dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:paddingLeft="5dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:textColor="#ffff"
+            android:id="@+id/buscador"
+            android:ems="10"
+            android:background="@color/colorPrimary"
+            android:hint="Buscar hospitales y/o farmacias"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        tools:context=".actividades.MapActivity" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/hospital"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="90dp"
+            android:onClick="onClick"
+            android:src="@drawable/hospital" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:onClick="onClick"
+            android:id="@+id/farmacias"
+            android:layout_toEndOf="@id/hospital"
+            android:src="@drawable/iconofarmacia" />
+    </RelativeLayout>
+
+</RelativeLayout>

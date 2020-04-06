@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ICoVid-19</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_informacion">InformacionActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_informaciones">InformacionesActivity</string>
+    <string name="tos">¿Cómo sé si mi tos es compatible con los síntomas del coronavirus?\n \n
+        La característica que más claramente se aprecia en la tos seca, la que está relacionadacon el nuevo coronavirus, es que no produce expectoración. Es decir, no llega acompañada de moco.Es irritativa y a menudo provoca dolor en la garganta o en el pecho.</string>
+    <string name="fiebre">¿Cual otro sintoma debo tomar en cuenta?\n \n
+        La fiebre es un síntoma clave, aseguran los expertos. No te fijes únicamente en un número, pero ten presente que en realidad es fiebre solo cuando tu temperatura alcanza por lo menos los 37,7 grados centígrados (o 100 grados Fahrenheit), tanto para niños como para adultos.</string>
+    <string name="dificultad">¿Que relación puede tener la dificultad para respirar con Covid-19? \n\n
+    La falta de aliento puede ser una tercera –y muy grave– manifestación del covid-19. Puede ocurrir incluso por sí sola, sin tos. Si tu pecho se tensa o comienzas a sentir que no puedes respirar lo suficiente, es una clara señal para actuar, señalan los expertos.</string>
+    <string name="atencion">Si sientes tener algunos de estos sintomas es recomendable que te comuniques al numero de emergencia 911 o a las autoridades sanitarias de tu país.</string>
+    <string name="volver"> <u>VOLVER</u></string>
+    <string name="llamar">"Debes recurrir a las autoridades sanitarias de tu pais para realizarte el test.\n\n Marcar numero de emergencia 911"</string>
+    <string name="ignorar">"Usted no necesita asistir a centro de salud, ni realizarse el test."</string>
+    <string name="pais">País</string>
+    <string name="paises"><u>Republica Dominicana</u></string>
+    <!--<string name="mapskey">AIzaSyDtR7-Zl63ApZ-TlgXVulOWVYEZnn6mN-g</string>-->
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>

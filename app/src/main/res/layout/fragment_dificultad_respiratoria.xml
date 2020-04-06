@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DificultadRespiratoriaFragment"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/imgdificultad"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="-2dp"
+        android:src="@drawable/dificultadrespiratoria" />
+
+    <TextView
+        android:id="@+id/tvnamedificultad"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_below="@id/imgdificultad"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="DIFICULTAD RESPIRATORIA"
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="379dp"
+        android:layout_below="@id/tvnamedificultad"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="18dp"
+        android:gravity="center_horizontal"
+        android:text="@string/dificultad"
+        android:textColor="#ffff"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
