@@ -116,7 +116,7 @@ public class MapActivity extends FragmentActivity implements
                         }
                         else
                         {
-                            Toast.makeText(this, "Location not found...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Dirección no encontrada...", Toast.LENGTH_SHORT).show();
                         }
                     }
                     catch (IOException e)
@@ -126,7 +126,7 @@ public class MapActivity extends FragmentActivity implements
                 }
                 else
                 {
-                    Toast.makeText(this, "please write any location name...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Escriba alguna dirección...", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
