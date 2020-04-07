@@ -41,15 +41,15 @@
             android:layout_width="64dp"
             android:layout_height="48dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="14dp"
-            android:text=" 1-¿Ha estado de viaje o en contacto directo con una persona con COVID-19 probable o confirmado?"
-            android:textColor="@color/colorBlanco"
-            android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text=" 1-¿Ha estado de viaje o en contacto directo con una persona con COVID-19 probable o confirmado?"
+                    android:textColor="@color/colorBlanco"
+                    android:textStyle="bold" />
 
-        <RadioGroup
+                <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -111,7 +111,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="14dp"
+            android:padding="20px"
             android:text=" 3-¿Presenta dificultad respiratoria?"
             android:textColor="@color/colorBlanco"
             android:textStyle="bold" />

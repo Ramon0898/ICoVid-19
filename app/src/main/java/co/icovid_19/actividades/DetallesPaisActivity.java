@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class DetallesPaisActivity extends AppCompatActivity {
 
     TextView tvDetallePais, tvDetalleTotalCasos, tvDetalleCasosHoy, tvDetalleTotalMuertes, tvDetalleMuertesHoy, tvDetalleTotalRecuperados, tvDetalleTotalActivos, tvDetalleTotalCriticos;
@@ -30,12 +32,80 @@ public class DetallesPaisActivity extends AppCompatActivity {
         ICoVidPais iCoVidPais = getIntent().getParcelableExtra("EXTRA_COVID");
 
         tvDetallePais.setText(iCoVidPais.getmCovidCountry());
-        tvDetalleTotalCasos.setText(iCoVidPais.getmCases());
-        tvDetalleCasosHoy.setText(iCoVidPais.getmTodayCases());
-        tvDetalleTotalMuertes.setText(iCoVidPais.getmDeaths());
-        tvDetalleMuertesHoy.setText(iCoVidPais.getmTodayDeaths());
-        tvDetalleTotalRecuperados.setText(iCoVidPais.getmRecovered());
-        tvDetalleTotalActivos.setText(iCoVidPais.getmActive());
-        tvDetalleTotalCriticos.setText(iCoVidPais.getmCritical());
+
+        DecimalFormat d = new DecimalFormat("0,000");
+
+        if (iCoVidPais.getmCases()<999)
+        {
+            String casess = String.valueOf(iCoVidPais.getmCases());
+            tvDetalleTotalCasos.setText(casess);
+        }
+        else
+            {
+                String casess = String.valueOf(d.format(iCoVidPais.getmCases()));
+                tvDetalleTotalCasos.setText(casess);
+            }
+
+
+
+        if(iCoVidPais.getmTodayCases()<999)
+        {
+            String casess1 = String.valueOf(iCoVidPais.getmTodayCases());
+            tvDetalleCasosHoy.setText(casess1);
+        }
+        else {
+        String casess1 = String.valueOf(d.format(iCoVidPais.getmTodayCases()));
+        tvDetalleCasosHoy.setText(casess1); }
+
+        if(iCoVidPais.getmDeaths()<999)
+        {
+            String casess2 = String.valueOf(iCoVidPais.getmDeaths());
+            tvDetalleTotalMuertes.setText(casess2);
+        }
+        else{
+            String casess2 = String.valueOf(d.format(iCoVidPais.getmDeaths()));
+            tvDetalleTotalMuertes.setText(casess2);}
+
+        if(iCoVidPais.getmTodayDeaths()<999)
+        {
+            String casess3 = String.valueOf(iCoVidPais.getmTodayDeaths());
+            tvDetalleMuertesHoy.setText(casess3);
+        }else{
+            String casess3 = String.valueOf(d.format(iCoVidPais.getmTodayDeaths()));
+            tvDetalleMuertesHoy.setText(casess3); }
+
+        if (iCoVidPais.getmRecovered()<999)
+        {
+            String casess4 = String.valueOf(iCoVidPais.getmRecovered());
+            tvDetalleTotalRecuperados.setText(casess4);
+        }
+        else
+            {
+                String casess4 = String.valueOf(d.format(iCoVidPais.getmRecovered()));
+                tvDetalleTotalRecuperados.setText(casess4);
+            }
+        if (iCoVidPais.getmActive()<999)
+        {
+            String casess5 = String.valueOf(iCoVidPais.getmActive());
+            tvDetalleTotalActivos.setText(casess5);
+        }
+        else
+            {
+                String casess5 = String.valueOf(d.format(iCoVidPais.getmActive()));
+                tvDetalleTotalActivos.setText(casess5);
+            }
+
+
+        if (iCoVidPais.getmCritical()<999)
+        {
+            String casess6 = String.valueOf(iCoVidPais.getmCritical());
+            tvDetalleTotalCriticos.setText(casess6);
+        }
+        else
+            {
+                String casess6 = String.valueOf(d.format(iCoVidPais.getmCritical()));
+                tvDetalleTotalCriticos.setText(casess6);
+            }
+
     }
 }

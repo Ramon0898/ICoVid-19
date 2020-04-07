@@ -25,6 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.ref.ReferenceQueue;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -35,7 +36,6 @@ public class MundialActivity extends AppCompatActivity {
     Button btnFinalizarCargaMundial;
     ProgressBar progressBar;
     private RequestQueue queue;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,10 +79,16 @@ public class MundialActivity extends AppCompatActivity {
 
                 try {
                     JSONObject jsonObject = new JSONObject(response.toString());
+                    DecimalFormat dd = new DecimalFormat("0,000");
+                    int casos= jsonObject.getInt("cases");
+                    int muertes = jsonObject.getInt("deaths");
+                    int recuperados = jsonObject.getInt("recovered");
 
-                    tvTotalConfirmados.setText(jsonObject.getString("cases"));
-                    tvTotalMuertes.setText(jsonObject.getString("deaths"));
-                    tvTotalRecuperados.setText(jsonObject.getString("recovered"));
+
+
+                    tvTotalConfirmados.setText(dd.format(casos));
+                    tvTotalMuertes.setText(dd.format(muertes));
+                    tvTotalRecuperados.setText(dd.format(recuperados));
                     tvUltimaActualizacion.setText("Última Actualización "+"\n"+getFecha(jsonObject.getLong("updated")));
                 } catch (JSONException e) {
                     e.printStackTrace();

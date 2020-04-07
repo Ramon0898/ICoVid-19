@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.nio.DoubleBuffer;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
@@ -40,7 +41,11 @@ public class CovidPaisAdapter  extends RecyclerView.Adapter<CovidPaisAdapter.Vie
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         ICoVidPais iCoVidPais = iCoVidPaises.get(position);
-        holder.tvTotalCasos.setText(iCoVidPais.getmCases());
+        DecimalFormat d = new DecimalFormat("0,000");
+
+        String cases = String.valueOf(d.format(iCoVidPais.getmCases()));
+        holder.tvTotalCasos.setText(cases);
+
         holder.tvNombrePais.setText(iCoVidPais.getmCovidCountry());
 
         Glide.with(context)

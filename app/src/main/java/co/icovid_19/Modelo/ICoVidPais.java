@@ -5,9 +5,13 @@ import android.os.Parcelable;
 
 public class ICoVidPais implements Parcelable {
 
-    String mCovidCountry, mCases, mTodayCases, mDeaths, mTodayDeaths, mRecovered, mActive, mCritical, mflag;
+    String mCovidCountry,mflag;
+    int mTodayCases, mTodayDeaths;
+    int mCases,mDeaths,mRecovered,mActive,mCritical;
 
-    public ICoVidPais(String mCovidCountry, String mCases, String mTodayCases, String mDeaths, String mTodayDeaths, String mRecovered, String mActive, String mCritical, String mflag) {
+
+
+    public ICoVidPais(String mCovidCountry, int mCases, int mTodayCases, int mDeaths, int mTodayDeaths, int mRecovered, int mActive, int mCritical, String mflag) {
         this.mCovidCountry = mCovidCountry;
         this.mCases = mCases;
         this.mTodayCases = mTodayCases;
@@ -23,31 +27,31 @@ public class ICoVidPais implements Parcelable {
         return mCovidCountry;
     }
 
-    public String getmCases() {
+    public int getmCases() {
         return mCases;
     }
 
-    public String getmTodayCases() {
+    public int getmTodayCases() {
         return mTodayCases;
     }
 
-    public String getmDeaths() {
+    public int getmDeaths() {
         return mDeaths;
     }
 
-    public String getmTodayDeaths() {
+    public int getmTodayDeaths() {
         return mTodayDeaths;
     }
 
-    public String getmRecovered() {
+    public int getmRecovered() {
         return mRecovered;
     }
 
-    public String getmActive() {
+    public int getmActive() {
         return mActive;
     }
 
-    public String getmCritical() {
+    public int getmCritical() {
         return mCritical;
     }
 
@@ -63,25 +67,25 @@ public class ICoVidPais implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.mCovidCountry);
-        dest.writeString(this.mCases);
-        dest.writeString(this.mTodayCases);
-        dest.writeString(this.mDeaths);
-        dest.writeString(this.mTodayDeaths);
-        dest.writeString(this.mRecovered);
-        dest.writeString(this.mActive);
-        dest.writeString(this.mCritical);
+        dest.writeInt(this.mCases);
+        dest.writeInt(this.mTodayCases);
+        dest.writeInt(this.mDeaths);
+        dest.writeInt(this.mTodayDeaths);
+        dest.writeInt(this.mRecovered);
+        dest.writeInt(this.mActive);
+        dest.writeInt(this.mCritical);
         dest.writeString(this.mflag);
     }
 
     protected ICoVidPais(Parcel in) {
         this.mCovidCountry = in.readString();
-        this.mCases = in.readString();
-        this.mTodayCases = in.readString();
-        this.mDeaths = in.readString();
-        this.mTodayDeaths = in.readString();
-        this.mRecovered = in.readString();
-        this.mActive = in.readString();
-        this.mCritical = in.readString();
+        this.mCases = in.readInt();
+        this.mTodayCases = in.readInt();
+        this.mDeaths = in.readInt();
+        this.mTodayDeaths = in.readInt();
+        this.mRecovered = in.readInt();
+        this.mActive = in.readInt();
+        this.mCritical = in.readInt();
         this.mflag = in.readString();
     }
 
