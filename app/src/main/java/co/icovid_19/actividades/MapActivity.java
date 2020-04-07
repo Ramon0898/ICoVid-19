@@ -34,9 +34,15 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -72,6 +78,7 @@ public class MapActivity extends FragmentActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
 
         setUPGClient();
 
@@ -155,7 +162,7 @@ public class MapActivity extends FragmentActivity implements
 
             BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.marker);
 
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLatitude, currentLongitude), 15.0f));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(currentLatitude, currentLongitude), 13.0f));
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(new LatLng(currentLatitude,currentLongitude));
             markerOptions.title("Mi Ubicación");
@@ -167,16 +174,13 @@ public class MapActivity extends FragmentActivity implements
 
         }
 
-
-
-
     }
 
     private void getNearbyHospitals() {
         StringBuilder stringBuilder =
                 new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         stringBuilder.append("location="+String.valueOf(currentLatitude)+","+String.valueOf(currentLongitude));
-        stringBuilder.append("&radius=1000");
+        stringBuilder.append("&radius=3500");
         stringBuilder.append("&type=hospital");
         stringBuilder.append("&key="+getResources().getString(R.string.google_maps_key));
 

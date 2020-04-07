@@ -1,5 +1,5 @@
 package co.icovid_19.Modelo;
-import org.json.JSONArray;
+/*import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -74,4 +74,4 @@ public class DataPaser {
 
         return getAllNearbyPlaces(jsonArray);
     }
-}
+}*/

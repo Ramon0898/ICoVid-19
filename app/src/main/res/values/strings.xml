@@ -22,6 +22,5 @@
     <string name="paises"><u>Republica Dominicana</u></string>
     <!--<string name="mapskey">AIzaSyDtR7-Zl63ApZ-TlgXVulOWVYEZnn6mN-g</string>-->
     <string name="title_activity_map">Map</string>
-    <string name="title_activity_maps">Map</string>
 
 </resources>
