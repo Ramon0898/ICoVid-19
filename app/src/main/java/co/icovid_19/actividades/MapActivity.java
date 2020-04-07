@@ -89,7 +89,42 @@ public class MapActivity extends FragmentActivity implements
     }
 
 
+    public void onClick(View v) {
+        Object dataTransfer[] = new Object[2];
+        LugaresCercanos getNearbyPlacesData = new LugaresCercanos();
 
+        switch (v.getId()) {
+            case R.id.lupa:
+                EditText tf_location = findViewById(R.id.buscador);
+                String location = tf_location.getText().toString();
+                List<Address> addressList;
+
+
+                if (!location.equals("")) {
+                    Geocoder geocoder = new Geocoder(this);
+
+                    try {
+                        addressList = geocoder.getFromLocationName(location, 5);
+
+                        if (addressList != null) {
+                            for (int i = 0; i < addressList.size(); i++) {
+                                LatLng latLng = new LatLng(addressList.get(i).getLatitude(), addressList.get(i).getLongitude());
+                                MarkerOptions markerOptions = new MarkerOptions();
+                                markerOptions.position(latLng);
+                                markerOptions.title(location);
+                                mMap.addMarker(markerOptions);
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(18));
+                            }
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                break;
+
+        }
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

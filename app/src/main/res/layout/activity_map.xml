@@ -6,7 +6,7 @@
     android:background="@color/colorPrimary"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-   <!-- <RelativeLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,7 +16,7 @@
             android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="0dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="15dp"
             android:layout_toEndOf="@id/buscador"
             android:background="@color/colorBlanco"
             android:onClick="onClick"
@@ -32,40 +32,14 @@
             android:ems="10"
             android:hint="Buscar hospitales y/o farmacias"
             android:paddingLeft="5dp"
+            android:textColorHint="@color/colorPrimary"
             android:textColor="#000000"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/hospital"
-            android:layout_width="110dp"
-            android:layout_height="50dp"
-            android:layout_below="@id/buscador"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="70dp"
-            android:text="Hospitales"
-            android:onClick="onClick"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/colorPrimary"
-            android:background="@color/colorBlanco"
-            android:src="@drawable/hospital" />
-
-        <Button
-            android:layout_width="110dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="15dp"
-            android:layout_below="@id/buscador"
-            android:onClick="onClick"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/colorPrimary"
-            android:background="@color/colorBlanco"
-            android:id="@+id/farmacias"
-            android:text="Farmacias"
-            android:layout_toEndOf="@id/hospital"
-            android:src="@drawable/iconofarmacia" />
 
 
 
-    </RelativeLayout>-->
+    </RelativeLayout>
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -74,6 +48,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="65dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         tools:context=".actividades.MapActivity" />
