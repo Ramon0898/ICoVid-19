@@ -7,17 +7,22 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 public class LugaresCercanos extends AsyncTask<Object, String, String> {
-    private String googleplaceData, url;
-    private GoogleMap mMap;
+
+    String googleplaceData, url;
+    GoogleMap googleMap;
 
     @Override
     protected String doInBackground(Object... objects) {
-        mMap = (GoogleMap) objects[0];
+        googleMap = (GoogleMap) objects[0];
         url = (String) objects[1];
 
         DownloadUrl downloadUrl = new DownloadUrl();
@@ -33,32 +38,36 @@ public class LugaresCercanos extends AsyncTask<Object, String, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        List<HashMap<String, String>> nearByPlacesList = null;
-        DataPaser dataParser = new DataPaser();
-        nearByPlacesList = dataParser.parse(s);
 
-        DisplayNearbyPlaces(nearByPlacesList);
-    }
+        try {
+            JSONObject parentObject = new JSONObject(s);
+            JSONArray resultArray = parentObject.getJSONArray("results");
 
+            for (int i =0; i < resultArray.length(); i++){
+                JSONObject jsonObject = resultArray.getJSONObject(i);
+                JSONObject locationObj = jsonObject.getJSONObject("geometry").getJSONObject("location");
 
-    private void DisplayNearbyPlaces(List<HashMap<String, String>> nearByPlacesList) {
-        for (int i = 0; i < nearByPlacesList.size(); i++) {
-            MarkerOptions markerOptions = new MarkerOptions();
+                String latitude = locationObj.getString("lat");
+                String longitude =locationObj.getString("lng");
 
-            HashMap<String, String> googleNearbyPlace = nearByPlacesList.get(i);
-            String nameOfPlace = googleNearbyPlace.get("place_name");
-            String vicinity = googleNearbyPlace.get("vicinity");
-            double lat = Double.parseDouble(googleNearbyPlace.get("lat"));
-            double lng = Double.parseDouble(googleNearbyPlace.get("lng"));
+                JSONObject nameObject = resultArray.getJSONObject(i);
+                String name = nameObject.getString("name");
 
+                LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 
-            LatLng latLng = new LatLng(lat, lng);
-            markerOptions.position(latLng);
-            markerOptions.title(nameOfPlace + " : " + vicinity);
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
-            mMap.addMarker(markerOptions);
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+                MarkerOptions markerOptions = new MarkerOptions();
+                markerOptions.title(name);
+                markerOptions.position(latLng);
+
+                googleMap.addMarker(markerOptions);
+
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
+
+
+
 }

@@ -141,7 +141,7 @@ public class InicioFragment extends Fragment {
         ImageView viewflipp = new ImageView(getContext());
         viewflipp.setBackgroundResource(i);
         viewFlipper.addView(viewflipp);
-        viewFlipper.setFlipInterval(4000);
+        viewFlipper.setFlipInterval(5000);
         viewFlipper.setAutoStart(true);
 
         viewFlipper.setInAnimation(getContext(), android.R.anim.slide_out_right);
