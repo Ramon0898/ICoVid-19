@@ -121,7 +121,7 @@ public class MapActivity extends FragmentActivity implements
                                 markerOptions.title(location);
                                 mMap.addMarker(markerOptions);
                                 mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-                                mMap.animateCamera(CameraUpdateFactory.zoomTo(18));
+                                mMap.animateCamera(CameraUpdateFactory.zoomTo(13));
                             }
                         }
                     } catch (IOException e) {
@@ -166,8 +166,8 @@ public class MapActivity extends FragmentActivity implements
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(new LatLng(currentLatitude,currentLongitude));
             markerOptions.title("Mi Ubicación");
-            mMap.addMarker(markerOptions);
             markerOptions.icon(icon);
+            mMap.addMarker(markerOptions);
 
             getNearbyHospitals();
 
@@ -180,7 +180,7 @@ public class MapActivity extends FragmentActivity implements
         StringBuilder stringBuilder =
                 new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         stringBuilder.append("location="+String.valueOf(currentLatitude)+","+String.valueOf(currentLongitude));
-        stringBuilder.append("&radius=3500");
+        stringBuilder.append("&radius=3000");
         stringBuilder.append("&type=hospital");
         stringBuilder.append("&key="+getResources().getString(R.string.google_maps_key));
 
@@ -253,8 +253,8 @@ public class MapActivity extends FragmentActivity implements
                 if (permissionLocation == PackageManager.PERMISSION_GRANTED) {
                     myLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
                     LocationRequest locationRequest = new LocationRequest();
-                    locationRequest.setInterval(6000);
-                    locationRequest.setFastestInterval(6000);
+                    locationRequest.setInterval(10000);
+                    locationRequest.setFastestInterval(10000);
                     locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
                     LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                             .addLocationRequest(locationRequest);
