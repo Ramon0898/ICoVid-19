@@ -54,7 +54,7 @@ public class InicioFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     Activity actividad;
-    CardView cardDataMundial, cardDataPais, cardTest, cardAyuda, cardMapa,RD;
+    CardView cardDataMundial, cardDataPais, cardTest, cardAyuda, cardMapa, cardRd;
     IComunicarFragment interfaceComunicaFragments;
     ViewFlipper viewFlipper;
 
@@ -112,7 +112,7 @@ public class InicioFragment extends Fragment {
         cardTest = view.findViewById(R.id.cardTest);
         cardAyuda = view.findViewById(R.id.cardAyuda);
         cardMapa = view.findViewById(R.id.cardMapa);
-        RD =view.findViewById(R.id.RD);
+        cardRd = view.findViewById(R.id.cardRD);
 
         eventosMenu();
 
@@ -163,12 +163,6 @@ public class InicioFragment extends Fragment {
             }
         });
 
-        RD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                interfaceComunicaFragments.DR();
-            }
-        });
         cardDataPais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -195,6 +189,14 @@ public class InicioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 interfaceComunicaFragments.Mapa();
+            }
+        });
+
+
+        cardRd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                interfaceComunicaFragments.Rd();
             }
         });
 

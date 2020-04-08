@@ -19,7 +19,7 @@
     <string name="llamar">"Debes recurrir a las autoridades sanitarias de tu pais para realizarte el test.\n\n Marcar numero de emergencia 911"</string>
     <string name="ignorar">"Usted no necesita asistir a centro de salud, ni realizarse el test."</string>
     <string name="pais">País</string>
-    <string name="paises"><u>Republica Dominicana</u></string>
+    <string name="paises"><u>República Dominicana</u></string>
     <!--<string name="mapskey">AIzaSyDtR7-Zl63ApZ-TlgXVulOWVYEZnn6mN-g</string>-->
     <string name="title_activity_map">Map</string>
 

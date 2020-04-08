@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,7 +51,7 @@ public class RepublicaDominicana extends AppCompatActivity {
         tvTotalMuertes = findViewById(R.id.tvtotalmuertos);
         tvTotalRecuperados = findViewById(R.id.tvtotalrecuperados);
         tvUltimaActualizacion = findViewById(R.id.tvUltimaActualizacion);
-        progressBar = findViewById(R.id.progressBarMundial);
+        progressBar = findViewById(R.id.progressBarRd);
         PaisNombre = findViewById(R.id.Nombre);
         detallesCasosRD = findViewById(R.id.tvDetalleTotalCasosRD);
         tvDetalleTotalCasosHoyRD =findViewById(R.id.tvDetalleTotalCasosHoyRD);
@@ -61,22 +62,15 @@ public class RepublicaDominicana extends AppCompatActivity {
         tvDetalleTotalRecuperadosRD = findViewById(R.id.tvDetalleTotalRecuperadosRD);
 
 
-        getDataMundial();
+        getDataRd();
 
     }
 
-    private String getFecha(long milliSecond){
-        // Viernes, 3 Abril 2020 06:19:04 PM
-        SimpleDateFormat formattter = new SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss aaa");
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(milliSecond);
 
-        return formattter.format(calendar.getTime());
-    }
-
-    private void getDataMundial() {
+    private void getDataRd() {
         RequestQueue queue = Volley.newRequestQueue(this);
+
 
         String url = "https://corona.lmao.ninja/countries/DO";
 
@@ -84,7 +78,7 @@ public class RepublicaDominicana extends AppCompatActivity {
 
             @Override
             public void onResponse(String response) {
-
+                progressBar.setVisibility(View.GONE);
 
                 try {
                     JSONObject jsonObject = new JSONObject(response.toString());
@@ -101,6 +95,8 @@ public class RepublicaDominicana extends AppCompatActivity {
                     int deathsPerOneMillion = jsonObject.getInt("deathsPerOneMillion");
                     int tests = jsonObject.getInt("tests");
                     int testsPerOneMillion = jsonObject.getInt("testsPerOneMillion");
+
+
 
                     DecimalFormat dd = new DecimalFormat("0,000");
 
@@ -178,16 +174,6 @@ public class RepublicaDominicana extends AppCompatActivity {
                         }
 
                     PaisNombre.setText(country);
-
-
-
-
-
-
-
-
-
-
 
 
 

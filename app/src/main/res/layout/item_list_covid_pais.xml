@@ -31,7 +31,7 @@
 
 
         <TextView
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/tvTotalcasos"
             android:layout_width="wrap_content"
             tools:text="824568"

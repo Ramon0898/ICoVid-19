@@ -50,22 +50,38 @@ public class TestActivity extends AppCompatActivity {
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rd1_1.isChecked() && rd1_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked() == true) {
+                if (rd1_1.isChecked() && rd1_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked() && rd1_5.isChecked() == true) {
                     ConsultaPositiva();
-                } else if (rd1_2.isChecked() && rd1_2.isChecked() && rd2_3.isChecked() && rd1_4.isChecked() == true) {
+                } else if (rd2_1.isChecked() && rd1_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked() && rd1_5.isChecked() == true) {
                     ConsultaPositiva();
-                } else if (rd1_1.isChecked() && rd2_2.isChecked() && rd2_3.isChecked() && rd1_4.isChecked() == true) {
+                } else if (rd1_1.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked() && rd1_5.isChecked() == true) {
                     ConsultaPositiva();
-                } else if (rd1_1.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked() == true) {
+                } else if (rd1_1.isChecked() && rd1_2.isChecked() && rd2_3.isChecked() && rd1_4.isChecked() && rd1_5.isChecked() == true) {
                     ConsultaPositiva();
-                } else if (rd1_2.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked() == true) {
+                } else if (rd1_1.isChecked() && rd1_2.isChecked() && rd1_3.isChecked() && rd2_4.isChecked()&& rd1_5.isChecked() == true) {
                     ConsultaPositiva();
-                } else if (rd1_2.isChecked() && rd2_2.isChecked() && rd2_3.isChecked() && rd1_4.isChecked() == true) {
+                } else if (rd1_1.isChecked() && rd1_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked()&& rd2_5.isChecked() == true) {
                     ConsultaPositiva();
-                } else if (rd1_2.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked() == true) {
+                } else if (rd2_1.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked()&& rd1_5.isChecked() == true) {
                     ConsultaPositiva();
-                } else if (rd1_2.isChecked() && rd2_2.isChecked() && rd2_3.isChecked() && rd2_4.isChecked() == true) {
-                    ConsultaNegativa();
+                }
+                else if (rd2_1.isChecked() && rd1_2.isChecked() && rd2_3.isChecked() && rd1_4.isChecked()&& rd1_5.isChecked() == true) {
+                    ConsultaPositiva();
+                }
+                else if (rd1_1.isChecked() && rd2_2.isChecked() && rd2_3.isChecked() && rd1_4.isChecked()&& rd1_5.isChecked() == true) {
+                    ConsultaPositiva();
+                }
+                else if (rd1_1.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked()&& rd2_5.isChecked() == true) {
+                    ConsultaPositiva();
+                }
+                else if (rd1_1.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked()&& rd2_5.isChecked() == true) {
+                    ConsultaPositiva();
+                }
+                else if (rd2_1.isChecked() && rd2_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked()&& rd1_5.isChecked() == true) {
+                    ConsultaPositiva();
+                }
+                else if (rd2_1.isChecked() && rd1_2.isChecked() && rd1_3.isChecked() && rd1_4.isChecked()&& rd1_5.isChecked() == true) {
+                    ConsultaPositiva();
                 } else {
                     ConsultaNegativa();
                 }

@@ -33,7 +33,6 @@ import java.util.List;
 public class MundialActivity extends AppCompatActivity {
 
     TextView tvTotalConfirmados, tvTotalMuertes, tvTotalRecuperados, tvUltimaActualizacion;
-    Button btnFinalizarCargaMundial;
     ProgressBar progressBar;
     private RequestQueue queue;
     @Override
