@@ -43,8 +43,17 @@ public class CovidPaisAdapter  extends RecyclerView.Adapter<CovidPaisAdapter.Vie
         ICoVidPais iCoVidPais = iCoVidPaises.get(position);
         DecimalFormat d = new DecimalFormat("0,000");
 
-        String cases = String.valueOf(d.format(iCoVidPais.getmCases()));
-        holder.tvTotalCasos.setText(cases);
+        if (iCoVidPais.getmCases()<=999)
+        {
+            String cases = String.valueOf(iCoVidPais.getmCases());
+            holder.tvTotalCasos.setText(cases);
+        }
+        else
+            {
+                String cases = String.valueOf(d.format(iCoVidPais.getmCases()));
+                holder.tvTotalCasos.setText(cases);
+            }
+
 
         holder.tvNombrePais.setText(iCoVidPais.getmCovidCountry());
 

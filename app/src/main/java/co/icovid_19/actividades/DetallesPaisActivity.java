@@ -48,7 +48,7 @@ public class DetallesPaisActivity extends AppCompatActivity {
 
 
 
-        if(iCoVidPais.getmTodayCases()<999)
+        if(iCoVidPais.getmTodayCases()<=999)
         {
             String casess1 = String.valueOf(iCoVidPais.getmTodayCases());
             tvDetalleCasosHoy.setText(casess1);
@@ -57,7 +57,7 @@ public class DetallesPaisActivity extends AppCompatActivity {
         String casess1 = String.valueOf(d.format(iCoVidPais.getmTodayCases()));
         tvDetalleCasosHoy.setText(casess1); }
 
-        if(iCoVidPais.getmDeaths()<999)
+        if(iCoVidPais.getmDeaths()<=999)
         {
             String casess2 = String.valueOf(iCoVidPais.getmDeaths());
             tvDetalleTotalMuertes.setText(casess2);
@@ -66,7 +66,7 @@ public class DetallesPaisActivity extends AppCompatActivity {
             String casess2 = String.valueOf(d.format(iCoVidPais.getmDeaths()));
             tvDetalleTotalMuertes.setText(casess2);}
 
-        if(iCoVidPais.getmTodayDeaths()<999)
+        if(iCoVidPais.getmTodayDeaths()<=999)
         {
             String casess3 = String.valueOf(iCoVidPais.getmTodayDeaths());
             tvDetalleMuertesHoy.setText(casess3);
@@ -74,7 +74,7 @@ public class DetallesPaisActivity extends AppCompatActivity {
             String casess3 = String.valueOf(d.format(iCoVidPais.getmTodayDeaths()));
             tvDetalleMuertesHoy.setText(casess3); }
 
-        if (iCoVidPais.getmRecovered()<999)
+        if (iCoVidPais.getmRecovered()<=999)
         {
             String casess4 = String.valueOf(iCoVidPais.getmRecovered());
             tvDetalleTotalRecuperados.setText(casess4);
@@ -84,7 +84,7 @@ public class DetallesPaisActivity extends AppCompatActivity {
                 String casess4 = String.valueOf(d.format(iCoVidPais.getmRecovered()));
                 tvDetalleTotalRecuperados.setText(casess4);
             }
-        if (iCoVidPais.getmActive()<999)
+        if (iCoVidPais.getmActive()<=999)
         {
             String casess5 = String.valueOf(iCoVidPais.getmActive());
             tvDetalleTotalActivos.setText(casess5);
@@ -96,7 +96,7 @@ public class DetallesPaisActivity extends AppCompatActivity {
             }
 
 
-        if (iCoVidPais.getmCritical()<999)
+        if (iCoVidPais.getmCritical()<=999)
         {
             String casess6 = String.valueOf(iCoVidPais.getmCritical());
             tvDetalleTotalCriticos.setText(casess6);
