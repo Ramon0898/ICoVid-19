@@ -7,4 +7,5 @@ public interface IComunicarFragment {
     public void Test();
     public void Ayuda();
     public void Mapa();
+    public void DR();
 }

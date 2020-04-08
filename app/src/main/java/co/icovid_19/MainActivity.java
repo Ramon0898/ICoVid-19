@@ -7,6 +7,7 @@ import co.icovid_19.actividades.InformacionesActivity;
 import co.icovid_19.actividades.MapActivity;
 import co.icovid_19.actividades.MundialActivity;
 import co.icovid_19.actividades.PaisActivity;
+import co.icovid_19.actividades.RepublicaDominicana;
 import co.icovid_19.actividades.TestActivity;
 import co.icovid_19.actividades.ui.main.PageViewModel;
 import co.icovid_19.actividades.ui.main.PlaceholderFragment;
@@ -69,13 +70,17 @@ public class MainActivity extends AppCompatActivity  implements IComunicarFragme
     public void Ayuda() {
         Intent i = new Intent (this, InformacionesActivity.class);
         startActivity(i);
-
     }
 
     @Override
     public void Mapa() {
-
         Intent i = new Intent (this, MapActivity.class);
+        startActivity(i);
+    }
+
+    @Override
+    public void DR() {
+        Intent i = new Intent (this, RepublicaDominicana.class);
         startActivity(i);
     }
 }

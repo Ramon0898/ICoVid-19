@@ -70,40 +70,40 @@ public class MundialActivity extends AppCompatActivity {
     private void getDataMundial() {
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        String url = "https://corona.lmao.ninja/all";
+    String url = "https://corona.lmao.ninja/all";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                progressBar.setVisibility(View.GONE);
+    StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            progressBar.setVisibility(View.GONE);
 
-                try {
-                    JSONObject jsonObject = new JSONObject(response.toString());
-                    DecimalFormat dd = new DecimalFormat("0,000");
-                    int casos= jsonObject.getInt("cases");
-                    int muertes = jsonObject.getInt("deaths");
-                    int recuperados = jsonObject.getInt("recovered");
+            try {
+                JSONObject jsonObject = new JSONObject(response.toString());
+                DecimalFormat dd = new DecimalFormat("0,000");
+                int casos= jsonObject.getInt("cases");
+                int muertes = jsonObject.getInt("deaths");
+                int recuperados = jsonObject.getInt("recovered");
 
 
 
-                    tvTotalConfirmados.setText(dd.format(casos));
-                    tvTotalMuertes.setText(dd.format(muertes));
-                    tvTotalRecuperados.setText(dd.format(recuperados));
-                    tvUltimaActualizacion.setText("Última Actualización "+"\n"+getFecha(jsonObject.getLong("updated")));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                tvTotalConfirmados.setText(dd.format(casos));
+                tvTotalMuertes.setText(dd.format(muertes));
+                tvTotalRecuperados.setText(dd.format(recuperados));
+                tvUltimaActualizacion.setText("Última Actualización "+"\n"+getFecha(jsonObject.getLong("updated")));
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                progressBar.setVisibility(View.GONE);
-                Log.d("Error Response", error.toString());
-            }
+        }
+    }, new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            progressBar.setVisibility(View.GONE);
+            Log.d("Error Response", error.toString());
+        }
 
-        });
+    });
 
         queue.add(stringRequest);
 
-    }
+}
 }

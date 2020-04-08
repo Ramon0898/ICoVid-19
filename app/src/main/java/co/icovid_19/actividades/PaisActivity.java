@@ -124,51 +124,5 @@ public class PaisActivity extends AppCompatActivity {
         queue.add(stringRequest);
 
     }
-    private void getDataPaisBusqueda() {
-        String url = "https://corona.lmao.ninja/countries/";
-        RequestQueue queue = Volley.newRequestQueue(this);
 
-
-        iCoVidPaises = new ArrayList<>();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                progressBar.setVisibility(View.GONE);
-                if (response != null) {
-                    Log.e(TAG, "onResponse: " + response);
-                    try {
-                        JSONArray jsonArray = new JSONArray(response);
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject data = jsonArray.getJSONObject(i);
-
-                            //Extraer JSONObject inside JSONObject
-                            JSONObject conuntryInfo = data.getJSONObject("countryInfo");
-
-                            iCoVidPaises.add(new ICoVidPais(data.getString("country"),  data.getInt("cases"),
-                                    data.getInt("todayCases"), data.getInt("deaths"), data.getInt("todayDeaths"),
-                                    data.getInt("recovered"), data.getInt("active"), data.getInt("critical"),
-                                    conuntryInfo.getString("flag")
-                            ));
-
-                        }
-                        tvTotalPais.setText(jsonArray.length()+ " Paises");
-                        showRecyclerView();
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        progressBar.setVisibility(View.GONE);
-                        Log.e(TAG, "onResponse: "+ error);
-                    }
-                });
-        queue.add(stringRequest);
-
-    }
 }
